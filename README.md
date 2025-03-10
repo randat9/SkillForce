@@ -26,7 +26,7 @@ Każdy z folderów zawiera obrazy na czterech poziomach trudności: `level_1`, `
 
 Zainstaluj wymagania za pomocą polecenia:
 ```bash
-pip install opencv-python numpy scikit-learn
+pip install opencv-python numpy scikit-learn '''
 
 ## Jak uruchomić
 1. **Skonfiguruj ścieżki wejściowe i wyjściowe**:
