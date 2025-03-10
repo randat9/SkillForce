@@ -47,6 +47,27 @@ pip install opencv-python numpy scikit-learn
    ```python
    batch_process_images(input_dir, output_dir, eps=50, min_samples=3)
 
+  ## Algorytm
+
+### Przetwarzanie obrazu:
+1. Skalowanie obrazu do odcieni szarości w celu uproszczenia analizy.
+2. Usuwanie szumów za pomocą rozmycia Gaussa, aby poprawić jakość przetwarzania.
+3. Progowanie w celu wyodrębnienia odcinków poprzez binaryzację obrazu.
+
+### Ekstrakcja konturów:
+1. Wykrycie konturów na obrazie za pomocą funkcji `cv2.findContours`.
+2. Obliczenie centroidów (środków geometrycznych) oraz kątów nachylenia odcinków, co pozwala na ich charakterystykę.
+
+### Klasteryzacja (DBSCAN):
+1. Grupowanie konturów na podstawie pozycji centroidów oraz kątów nachylenia, z użyciem algorytmu DBSCAN (Density-Based Spatial Clustering of Applications with Noise).
+2. Automatyczne określenie liczby klas (linii) przez algorytm na podstawie danych.
+
+### Wizualizacja wyników:
+1. Linie należące do tej samej klasy są oznaczane różnymi kolorami dla łatwiejszej interpretacji wyników.
+2. Wynikowe obrazy z widocznymi klasami są zapisywane w folderze wyjściowym.
+
+
+
 Funkcja ta przeprocesuje wszystkie obrazy z folderu wejściowego i zapisze wyniki w folderze wyjściowym.
 
 ### Wyniki
